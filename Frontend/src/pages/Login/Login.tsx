@@ -1,9 +1,9 @@
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import './Test.style.scss';
+import './Login.scss';
 
-function Test() {
+const Login: React.FC = () => {
   return (
     <div className="main-container">
       <div className="sign-in">
@@ -31,5 +31,5 @@ function Test() {
       </div>
     </div>
   );
-}
-export default Test;
+};
+export default Login;
