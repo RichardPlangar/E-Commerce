@@ -9,7 +9,7 @@ const databaseConnection = mysql.createConnection({
   database: config.mysql.database,
 });
 
-const db = {
+export const database = {
   checkConnection(): void {
     databaseConnection.connect((err) => {
       if (err) {
@@ -32,3 +32,5 @@ const db = {
     });
   },
 };
+
+export default database;
