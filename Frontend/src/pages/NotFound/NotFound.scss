@@ -1,0 +1,24 @@
+@import '../../styles/variables.scss';
+
+.content-container {
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .error-message {
+    font-family: $primary-font;
+    padding: $font-size-1;
+    h2 {
+      font-size: $primary-font-size;
+    }
+    h3 {
+      font-size: $secondary-font-size;
+    }
+  }
+  .image-container {
+    img {
+      border-radius: $primary-desktop-radius;
+    }
+  }
+}
