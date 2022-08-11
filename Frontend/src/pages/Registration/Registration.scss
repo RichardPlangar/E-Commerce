@@ -1,0 +1,70 @@
+@use '../../styles/variables.scss';
+
+.register-container {
+  height: 100vh;
+  background-color: variables.$primary-background-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+
+  .sign-up {
+    background-color: variables.$secondary-background-color;
+    border-radius: 15px;
+  }
+  .form-container {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    h1 {
+      font-family: variables.$primary-font;
+      font-size: variables.$primary-font-size;
+    }
+  }
+
+  .input-wrapper {
+    background-color: variables.$secondary-background-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .input-field {
+      padding: 15px;
+      margin: 15px;
+      background-color: #fff;
+      width: 50%;
+      border-radius: 15px;
+
+      label {
+        margin-left: 20px;
+        font-size: 20px;
+      }
+    }
+  }
+
+  p,
+  span {
+    font-family: variables.$secondary-font;
+  }
+
+  .clickable-link {
+    cursor: pointer;
+  }
+  Button {
+    font-family: variables.$primary-font;
+    color: #fff;
+    background-color: #636db6;
+    width: 200px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+  }
+  Button:hover {
+    background-color: #636db6;
+  }
+  .terms-and-conditions {
+    display: flex;
+  }
+}
