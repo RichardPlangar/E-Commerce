@@ -11,6 +11,14 @@
   .sign-in {
     background-color: variables.$secondary-background-color;
     border-radius: 15px;
+    .terms-and-condition {
+      display: flex;
+      align-items: center;
+      p {
+        font-size: variables.$font-size-2;
+        padding: 5px;
+      }
+    }
   }
   .form-container {
     width: 500px;

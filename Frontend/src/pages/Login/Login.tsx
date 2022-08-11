@@ -23,12 +23,12 @@ const Login: React.FC = () => {
               required
               label="Password"
             ></TextField>
-            <Link to="/register">
-              <p>
-                Have no account?{' '}
+            <div className="terms-and-condition">
+              <p>Have no account? </p>
+              <Link to="/register">
                 <span className="clickable-link">Register</span>
-              </p>
-            </Link>
+              </Link>
+            </div>
           </div>
         </Box>
         <Button variant="outlined">Login</Button>
