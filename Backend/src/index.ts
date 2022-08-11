@@ -5,7 +5,7 @@ import { database } from './data/connection';
 
 const PORT = process.env.PORT || 3000;
 
-const app = makeApp(database.checkConnection());
+const app = makeApp(database);
 //db.checkConnection();
 
 // print all registered routes in application
