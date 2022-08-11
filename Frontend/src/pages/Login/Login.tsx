@@ -1,6 +1,7 @@
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import { Link } from 'react-router-dom';
 import './Login.scss';
 
 const Login: React.FC = () => {
@@ -22,9 +23,12 @@ const Login: React.FC = () => {
               required
               label="Password"
             ></TextField>
-            <p>
-              Have no account? <span className="clickable-link">Register</span>
-            </p>
+            <Link to="/register">
+              <p>
+                Have no account?{' '}
+                <span className="clickable-link">Register</span>
+              </p>
+            </Link>
           </div>
         </Box>
         <Button variant="outlined">Login</Button>
