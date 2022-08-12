@@ -23,12 +23,7 @@ exports.up = function (db) {
 };
 
 exports.down = function (db) {
-  return db.dropTable('role', (error) => {
-    if (error) {
-      console.error(error);
-    }
-    console.log('\x1b[45m%s\x1b[0m', 'The role table has been deleted!');
-  });
+  return null;
 };
 
 exports._meta = {
