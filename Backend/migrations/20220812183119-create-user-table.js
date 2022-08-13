@@ -32,6 +32,7 @@ exports.up = function (db) {
           type: 'int',
           unsigned: true,
           notNull: true,
+          defaultValue: 1,
           foreignKey: {
             name: 'role',
             table: 'role',
@@ -59,7 +60,7 @@ exports.down = function (db) {
     if (error) {
       console.error(error);
     }
-    console.log('\x1b[45m%s\x1b[0m', 'The user table has been deleted!');
+    console.log('\x1b[41m%s\x1b[0m', 'The user table has been deleted!');
   });
 };
 
