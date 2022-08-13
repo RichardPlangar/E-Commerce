@@ -1,6 +1,5 @@
 import makeApp from './app';
 import all_routes from 'express-list-endpoints';
-
 import { database } from './data/connection';
 
 const PORT = process.env.PORT || 3000;
