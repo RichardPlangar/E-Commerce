@@ -1,7 +1,8 @@
 import './Header.scss';
 import logo from './assets/vector-geometric-illustration-octopus-cosmic-planets/569.png';
 import Button from '@mui/material/Button';
-import { TextField } from '@mui/material';
+import { Badge, TextField, IconButton } from '@mui/material';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
@@ -18,15 +19,16 @@ const Header: React.FC = () => {
           label="Search"
           sx={{ input: { color: '#05386b' } }}
         ></TextField>
-        <Button
-          className="button"
-          variant="outlined"
-          size="large"
-          component={Link}
-          to="/login"
-        >
+        <Link className="contact" to="/contact">
+          Contact
+        </Link>
+        <Link className="delivery" to="/delivery">
+          Delivery
+        </Link>
+        <Link className="login" to="/login">
           Login
-        </Button>
+        </Link>
+
         <Button
           className="button"
           variant="outlined"
@@ -34,8 +36,15 @@ const Header: React.FC = () => {
           component={Link}
           to="/register"
         >
-          Sign up
+          Get started
         </Button>
+        <Link to="/cart">
+          <IconButton>
+            <Badge badgeContent={1} color="secondary" overlap="circular">
+              <ShoppingCartOutlinedIcon className="shopping-cart"></ShoppingCartOutlinedIcon>
+            </Badge>
+          </IconButton>
+        </Link>
       </div>
     </div>
   );
