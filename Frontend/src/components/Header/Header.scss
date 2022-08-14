@@ -24,10 +24,47 @@
   .button-container {
     display: flex;
     align-items: center;
+    .login,
+    .search-bar,
+    .shopping-cart,
+    .contact {
+      margin: 15px;
+    }
+    .login,
+    .delivery,
+    .contact {
+      font-family: $primary-font;
+      font-size: $secondary-font-size;
+      color: #05386b;
+      position: relative;
+      text-decoration: none;
+    }
+    .login::before,
+    .delivery::before,
+    .contact::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      border-radius: 4px;
+      background-color: #18272f;
+      bottom: 0;
+      left: 0;
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: transform 0.3s ease-in-out;
+    }
+    .login:hover::before,
+    .delivery:hover::before,
+    .contact:hover::before {
+      transform-origin: left;
+      transform: scaleX(1);
+    }
     .button {
       font-family: $secondary-font;
+      font-size: $font-size-1;
       margin: 15px;
-      border-radius: $primary-desktop-radius;
+      border-radius: 5px;
       background-color: #05386b;
       color: #edf5e1;
     }
