@@ -6,7 +6,6 @@ const userController = async (
   res: Response,
   next: NextFunction
 ) => {
-  console.log(req.body);
   try {
     const user = userService.getUserByEmail(req.body.email);
     return res.status(200).json(user);
