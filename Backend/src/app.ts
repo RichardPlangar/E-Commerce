@@ -11,8 +11,8 @@ export default function (database: any) {
   if (database) {
     database.checkConnection();
   }
-  app.use(routes());
   app.use(errorHandler);
+  app.use(routes());
 
   return app;
 }
