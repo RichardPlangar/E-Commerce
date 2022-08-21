@@ -60,11 +60,28 @@
     width: 200px;
     border-radius: 15px;
     margin-bottom: 15px;
+    margin-top: 10px;
   }
   Button:hover {
     background-color: #636db6;
   }
   .terms-and-conditions {
     display: flex;
+  }
+  .account-exist {
+    display: flex;
+    align-items: center;
+    font-size: variables.$font-size-2;
+    font-family: variables.$secondary-font;
+    p {
+      margin: 0;
+    }
+    .link-login {
+      margin: 10px;
+      text-decoration: none;
+    }
+    .link-login:visited {
+      color: #000;
+    }
   }
 }
