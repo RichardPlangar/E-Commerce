@@ -60,6 +60,8 @@
 
   .clickable-link {
     cursor: pointer;
+    text-decoration: none;
+    color: #000;
   }
   Button {
     font-family: variables.$primary-font;
