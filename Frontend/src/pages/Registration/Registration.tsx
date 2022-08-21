@@ -1,8 +1,14 @@
 import './Registration.scss';
-import { Box, Button, Checkbox, TextField } from '@mui/material';
+import {
+  Box,
+  Button,
+  Checkbox,
+  responsiveFontSizes,
+  TextField,
+} from '@mui/material';
 import toast, { Toaster } from 'react-hot-toast';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { validateEmail } from '../../helper/authHelper';
 
 const Registration: React.FC = () => {
@@ -14,7 +20,7 @@ const Registration: React.FC = () => {
 
   const navigate = useNavigate();
   const routeUser = () => {
-    navigate('/');
+    navigate('/login');
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -56,13 +62,29 @@ const Registration: React.FC = () => {
         'content-type': 'application/json',
       },
       body: JSON.stringify(newUser),
-    }).then((response) => {
-      if (response.status === 200) {
-        routeUser();
-      } else {
-        return response.json();
-      }
-    });
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.username) {
+          toast.success('Registration is successful!', {
+            duration: 4000,
+            position: 'top-center',
+          });
+          setTimeout(() => {
+            routeUser();
+          }, 2000);
+        } else {
+          data.errors?.forEach((error: any) => {
+            toast.error(`${error.msg} for ${error.param}`);
+          });
+        }
+      })
+      .catch((error) => {
+        toast.error('The server is unavailable!', {
+          duration: 4000,
+          position: 'top-center',
+        });
+      });
   };
   return (
     <div className="register-container">
@@ -97,6 +119,12 @@ const Registration: React.FC = () => {
             <div className="terms-and-conditions">
               <p>Terms & Conditions </p>
               <Checkbox size="medium" onChange={handleChange}></Checkbox>
+            </div>
+            <div className="account-exist">
+              <p>Already have an account?</p>
+              <Link to="/login" className="link-login">
+                <span className="clickable-link">Login</span>
+              </Link>
             </div>
           </div>
           <div className="button-register">
