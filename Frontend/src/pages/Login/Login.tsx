@@ -25,8 +25,8 @@ const Login: React.FC = () => {
             ></TextField>
             <div className="terms-and-condition">
               <p>Have no account? </p>
-              <Link to="/register">
-                <span className="clickable-link">Register</span>
+              <Link to="/register" className="clickable-link">
+                <span>Register</span>
               </Link>
             </div>
           </div>
