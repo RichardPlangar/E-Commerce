@@ -1,11 +1,5 @@
 import './Registration.scss';
-import {
-  Box,
-  Button,
-  Checkbox,
-  responsiveFontSizes,
-  TextField,
-} from '@mui/material';
+import { Box, Button, Checkbox, TextField } from '@mui/material';
 import toast, { Toaster } from 'react-hot-toast';
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
@@ -73,9 +67,14 @@ const Registration: React.FC = () => {
           setTimeout(() => {
             routeUser();
           }, 2000);
-        } else {
+        } else if (data.errors) {
           data.errors?.forEach((error: any) => {
             toast.error(`${error.msg} for ${error.param}`);
+          });
+        } else {
+          toast.error(`${data.message}`, {
+            duration: 4000,
+            position: 'top-center',
           });
         }
       })
