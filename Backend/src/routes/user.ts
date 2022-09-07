@@ -10,7 +10,23 @@ const route = Router();
 
 export default (app: Router) => {
   app.use(route);
-  route.get('/login', userController);
+  route.post(
+    '/login',
+    body('username')
+      .exists()
+      .withMessage('Please provide a username!')
+      .isLength({ min: 3 })
+      .bail(),
+    body('password')
+      .exists()
+      .withMessage('Please provide a password')
+      .bail()
+      .isLength({ min: 8 })
+      .withMessage('The password must have at least 8 characters')
+      .bail(),
+    validateRequest,
+    userController
+  );
   route.post(
     '/register',
     body('username')
