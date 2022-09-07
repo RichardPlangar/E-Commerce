@@ -1,5 +1,6 @@
 import { userRepository } from '../repositories/userRepository';
 import { UserDomainModel } from '../models/domain/UserDomainModel';
+import user from '../routes/user';
 
 const userService = {
   async getUserByEmail(email: string): Promise<UserDomainModel | undefined> {
@@ -28,6 +29,20 @@ const userService = {
       newInsertedUser as unknown as string
     );
     return { username: registeredUser.username, email: registeredUser.email };
+  },
+  async userLogin(username: string, password: string) {
+    const userValdation = await userRepository.getUserByUsername(username);
+    if (!userValdation) {
+      throw new Error('The username does not exist');
+    }
+    if (password !== userValdation.password) {
+      throw new Error('Invalid password');
+    }
+    const validatedUser = {
+      username: userValdation.username,
+      email: userValdation.email,
+    };
+    return validatedUser;
   },
 };
 
