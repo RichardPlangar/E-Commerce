@@ -33,4 +33,20 @@ const createUserController = async (
   }
 };
 
-export { userController, createUserController };
+const loginUserController = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const userLoginRequest = await userService.userLogin(
+      req.body.username,
+      req.body.password
+    );
+    return res.status(200).json(userLoginRequest);
+  } catch (error) {
+    return next(error);
+  }
+};
+
+export { userController, createUserController, loginUserController };
