@@ -3,6 +3,7 @@ import { body } from 'express-validator';
 import {
   userController,
   createUserController,
+  loginUserController,
 } from '../controllers/userController';
 import { validateRequest } from '../middlewares/validateRequest';
 
@@ -15,6 +16,7 @@ export default (app: Router) => {
     body('username')
       .exists()
       .withMessage('Please provide a username!')
+      .bail()
       .isLength({ min: 3 })
       .bail(),
     body('password')
@@ -25,7 +27,7 @@ export default (app: Router) => {
       .withMessage('The password must have at least 8 characters')
       .bail(),
     validateRequest,
-    userController
+    loginUserController
   );
   route.post(
     '/register',
