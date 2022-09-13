@@ -11,6 +11,7 @@
   .sign-in {
     background-color: variables.$secondary-background-color;
     border-radius: 15px;
+
     .terms-and-condition {
       display: flex;
       align-items: center;
@@ -38,13 +39,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: variables.$primary-desktop-radius;
 
     .input-field {
       padding: 15px;
       margin: 15px;
       background-color: #fff;
       width: 50%;
-      border-radius: 15px;
+      border-radius: variables.$primary-desktop-radius;
 
       label {
         margin-left: 20px;
@@ -66,12 +68,12 @@
   Button {
     font-family: variables.$primary-font;
     color: #fff;
-    background-color: #636db6;
+    background-color: variables.$button-background-color;
     width: 200px;
     border-radius: 15px;
     margin-bottom: 15px;
   }
   Button:hover {
-    background-color: #636db6;
+    background-color: #0c60b2;
   }
 }
