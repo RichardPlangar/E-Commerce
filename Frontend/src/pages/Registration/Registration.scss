@@ -10,6 +10,7 @@
 
   .sign-up {
     background-color: variables.$secondary-background-color;
+    font-family: variables.$primary-font;
     border-radius: 15px;
   }
   .form-container {
@@ -19,7 +20,6 @@
     flex-direction: column;
 
     h1 {
-      font-family: variables.$primary-font;
       font-size: variables.$primary-font-size;
     }
   }
@@ -36,7 +36,7 @@
       margin: 15px;
       background-color: #fff;
       width: 50%;
-      border-radius: 15px;
+      border-radius: variables.$primary-desktop-radius;
 
       label {
         margin-left: 20px;
@@ -48,6 +48,7 @@
   p,
   span {
     font-family: variables.$secondary-font;
+    font-size: variables.$font-size-2;
   }
 
   .clickable-link {
@@ -56,14 +57,14 @@
   Button {
     font-family: variables.$primary-font;
     color: #fff;
-    background-color: #636db6;
+    background-color: variables.$button-background-color;
     width: 200px;
-    border-radius: 15px;
+    border-radius: variables.$primary-desktop-radius;
     margin-bottom: 15px;
     margin-top: 10px;
   }
   Button:hover {
-    background-color: #636db6;
+    background-color: #0c60b2;
   }
   .terms-and-conditions {
     display: flex;
