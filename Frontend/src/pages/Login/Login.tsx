@@ -94,10 +94,10 @@ const Login: React.FC = () => {
                 <span>Register</span>
               </Link>
             </div>
+            <Button type="submit" variant="outlined">
+              Login
+            </Button>
           </div>
-          <Button type="submit" variant="outlined">
-            Login
-          </Button>
         </Box>
       </div>
       <Toaster />
