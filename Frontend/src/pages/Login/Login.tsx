@@ -71,7 +71,7 @@ const Login: React.FC = () => {
               className="input-field"
               variant="standard"
               required
-              label="username"
+              label="Username"
               name="username"
               onChange={(event) =>
                 setCredentials({ username: event.target.value, password })
@@ -82,7 +82,7 @@ const Login: React.FC = () => {
               variant="standard"
               required
               type="password"
-              label="password"
+              label="Password"
               name="password"
               onChange={(event) =>
                 setCredentials({ username, password: event.target.value })
