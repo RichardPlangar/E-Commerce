@@ -9,7 +9,9 @@ const Header: React.FC = () => {
   return (
     <div className="header-container">
       <div className="logo">
-        <img src={logo} alt="company logo"></img>
+        <Link to="/">
+          <img src={logo} alt="company logo"></img>
+        </Link>
         <h2>BlueSkie</h2>
       </div>
       <div className="button-container">
