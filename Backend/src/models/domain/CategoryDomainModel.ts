@@ -1,4 +1,4 @@
 export interface CategoryDomainModel {
-  id: number;
+  id?: number;
   category: string;
 }
