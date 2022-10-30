@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+
+.category-container {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+  background-color: $primary-background-color;
+  p {
+    margin: 0px;
+    font-family: $primary-font;
+    font-size: $secondary-font-size;
+    padding: 10px;
+  }
+}
