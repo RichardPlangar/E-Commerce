@@ -57,7 +57,7 @@ describe('userRepositry - getUserByUsername', () => {
   });
 });
 
-describe('userRepositry - getUserByUsername', () => {
+describe('userRepositry - getUserByEmail', () => {
   it('should return the requested user object by e-mail', async () => {
     const mockedDatabase: UserDomainModel[] = [
       {
