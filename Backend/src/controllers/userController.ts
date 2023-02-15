@@ -39,11 +39,11 @@ const loginUserController = async (
   next: NextFunction
 ) => {
   try {
-    const userLoginRequest = await userService.userLogin(
+    const token = await userService.userLogin(
       req.body.username,
       req.body.password
     );
-    return res.status(200).json(userLoginRequest);
+    return res.status(200).json({ status: 'ok', token: token });
   } catch (error) {
     return next(error);
   }
