@@ -1,6 +1,8 @@
 import { userRepository } from '../repositories/userRepository';
 import { UserDomainModel } from '../models/domain/UserDomainModel';
-import user from '../routes/user';
+import { roleRepository } from '../repositories/roleRepository';
+import jwt from 'jsonwebtoken';
+import config from '../config';
 
 const userService = {
   async getUserByEmail(email: string): Promise<UserDomainModel | undefined> {
@@ -31,18 +33,23 @@ const userService = {
     return { username: registeredUser.username, email: registeredUser.email };
   },
   async userLogin(username: string, password: string) {
-    const userValdation = await userRepository.getUserByUsername(username);
+    const userValdation: UserDomainModel =
+      await userRepository.getUserByUsername(username);
     if (!userValdation) {
       throw new Error('The username does not exist');
     }
     if (password !== userValdation.password) {
       throw new Error('Invalid password');
     }
+    const userRole = roleRepository.findRoleById(userValdation.id);
+
     const validatedUser = {
       username: userValdation.username,
-      email: userValdation.email,
+      isAdmin: userRole.name === 'admin',
+      isVerified: false,
     };
-    return validatedUser;
+
+    return jwt.sign(validatedUser, config.jwt.accessTokenSecretKey);
   },
 };
 
