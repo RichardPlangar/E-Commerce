@@ -4,7 +4,7 @@ export const roleRepository = {
   findRoleById(id: number): RoleDomainModel {
     return {
       id,
-      name: 'Customer',
+      name: 'customer',
     };
   },
 };
