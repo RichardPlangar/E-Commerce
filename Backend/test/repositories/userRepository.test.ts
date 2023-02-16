@@ -205,6 +205,7 @@ describe('userRepository - createUser', () => {
       },
     ];
     const mockedNewUser = {
+      id: 1,
       username: 'Jane Doe',
       email: 'jane.doe@test.com',
       password: 'password123',
@@ -227,6 +228,7 @@ describe('userRepository - createUser', () => {
 
     try {
       const mockedNewUser = {
+        id: 1,
         username: 'Jane Doe',
         email: 'jane.doe@test.com',
         password: 'password123',
