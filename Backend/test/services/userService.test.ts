@@ -5,10 +5,9 @@ import exp from 'constants';
 
 describe('userService - usernameAndEmailCheck', () => {
   it('Should return true if the username and e-mail validation passes', async () => {
-    const mockedUserObject: UserDomainModel = {
+    const mockedUserObject = {
       username: 'test',
       email: 'test@test.com',
-      password: 'password',
     };
 
     userRepository.getUserByUsername = jest.fn().mockResolvedValue(undefined);
@@ -31,10 +30,9 @@ describe('userService - usernameAndEmailCheck', () => {
     );
   });
   it('Should throw error if the username or the e-mail is already exist', async () => {
-    const mockedUserObject: UserDomainModel = {
+    const mockedUserObject = {
       username: 'test',
       email: 'test@test.com',
-      password: 'password',
     };
 
     const mockedRepositoryResponseObject: UserDomainModel = {
@@ -64,6 +62,7 @@ describe('userService - usernameAndEmailCheck', () => {
 describe('userService - createUserService', () => {
   it('Should return the new username and e-mail address', async () => {
     const newUser: UserDomainModel = {
+      id: 1,
       username: 'test',
       email: 'test@test.com',
       password: 'password',
@@ -88,6 +87,7 @@ describe('userService - createUserService', () => {
   });
   it('Should throw database error if the database is not available', async () => {
     const newUser: UserDomainModel = {
+      id: 1,
       username: 'test',
       email: 'test@test.com',
       password: 'password',
@@ -107,7 +107,7 @@ describe('userService - createUserService', () => {
 });
 
 describe('userService - userLogin', () => {
-  it('Should return the username and e-mail address if the user passes the validation', async () => {
+  it('Should return the token if the user passes the validation', async () => {
     const loginUser = {
       username: 'test',
       password: 'password',
@@ -131,7 +131,6 @@ describe('userService - userLogin', () => {
     );
 
     expect(result).toBeDefined();
-    expect(result).toEqual({ username: 'test', email: 'test@test.com' });
     expect(userRepository.getUserByUsername).toHaveBeenCalledTimes(1);
     expect(userRepository.getUserByUsername).toHaveBeenCalledWith(
       loginUser.username
