@@ -43,6 +43,7 @@ const loginUserController = async (
       req.body.username,
       req.body.password
     );
+
     return res.status(200).json({ status: 'ok', token: token });
   } catch (error) {
     return next(error);

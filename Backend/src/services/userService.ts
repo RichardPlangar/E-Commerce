@@ -30,11 +30,13 @@ const userService = {
     const registeredUser = await userRepository.getUserById(
       newInsertedUser as unknown as string
     );
+
     return { username: registeredUser.username, email: registeredUser.email };
   },
   async userLogin(username: string, password: string) {
     const userValdation: UserDomainModel =
       await userRepository.getUserByUsername(username);
+
     if (!userValdation) {
       throw new Error('The username does not exist');
     }
