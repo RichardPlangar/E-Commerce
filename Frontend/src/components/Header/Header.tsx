@@ -1,5 +1,5 @@
 import './Header.scss';
-import logo from './assets/vector-geometric-illustration-octopus-cosmic-planets/569.png';
+import logo from './assets/569.png';
 import Button from '@mui/material/Button';
 import { Badge, TextField, IconButton } from '@mui/material';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
