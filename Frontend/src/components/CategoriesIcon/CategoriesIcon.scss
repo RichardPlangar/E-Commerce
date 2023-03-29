@@ -3,8 +3,9 @@
 .category-container {
   display: flex;
   justify-content: center;
-  margin: 5px;
+  // margin: 5px;
   background-color: $primary-background-color;
+  background-image: linear-gradient(to right, #e3fdf5 0%, #ffe6fa 100%);
   p {
     margin: 0px;
     font-family: $primary-font;
